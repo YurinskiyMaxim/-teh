@@ -363,7 +363,7 @@ body:not(.home) .site-header {
 
 .request-inner {
   background: linear-gradient(90deg, rgba(210, 111, 22, 0.6) 0%, #d26f16 100%);
-  border: #D26F161A 1px solid;
+  border: #d26f161a 1px solid;
   border-radius: 2px;
   padding: 40px;
   text-align: center;
@@ -1015,19 +1015,19 @@ body:not(.home) .request-inner {
     grid-template-columns: 1fr;
   }
 
-  .hero-text{
+  .hero-text {
     margin-top: 70px;
   }
 }
 
 @media (max-width: 320px) {
-  .hero-text{
+  .hero-text {
     margin-top: 120px;
   }
 }
 
 @media (max-width: 383px) {
-  .hero-text{
+  .hero-text {
     margin-top: 80px;
   }
 }
@@ -1063,7 +1063,7 @@ body:not(.home) .request-inner {
 @media (max-width: 768px) {
   .catalog {
     padding: 30px 0;
-    margin-top: 30px;
+    margin-top: 80px;
   }
   .catalog-grid {
     gap: 16px;
@@ -1248,6 +1248,10 @@ body:not(.home) .request-inner {
 
 /* 480px — вертикальные телефоны */
 @media (max-width: 480px) {
+    .about{
+    margin-top: 90px;
+  }
+
   .form input,
   .form textarea {
     font-size: 14px;
@@ -1315,6 +1319,8 @@ body:not(.home) .request-inner {
 
 /* 320px — очень маленькие экраны */
 @media (max-width: 320px) {
+
+  
   .footer-logo .logo-text {
     font-size: 14px;
   }
@@ -1361,12 +1367,13 @@ body:not(.home) .request-inner {
 }
 
 @media (max-width: 768px) {
-  .bottom-inner, .bottom-right {
+  .bottom-inner,
+  .bottom-right {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  .bottom-inner{
+  .bottom-inner {
     gap: 12px;
   }
 }
