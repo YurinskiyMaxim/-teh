@@ -1,0 +1,19 @@
+{% extends 'rental/base.html' %} {% load static %} {% block title %}Заявка
+отправлена — СТАР{% endblock %} {% block content %}
+{% block body_class %}header-main-style{% endblock %}
+<section class="request-success">
+  <div class="container narrow">
+    <h1 class="section-title">Спасибо за вашу заявку!</h1>
+    <p>
+      Мы получили вашу информацию и свяжемся с вами в ближайшее время, чтобы
+      уточнить детали.
+    </p>
+    <div class="success-actions">
+      <a href="{% url 'catalog' %}" class="btn btn-primary"
+        >Перейти в каталог</a
+      >
+      <a href="{% url 'home' %}" class="btn btn-outline">На главную</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

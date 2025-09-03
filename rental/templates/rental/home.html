@@ -1,0 +1,62 @@
+{% extends 'rental/base.html' %}
+{% load static %}
+{% block title %}Главная — СТАР{% endblock %}
+{% block body_class %}home{% endblock %}
+{% block content %}
+
+<!-- Баннер -->
+<section class="hero">
+  <div class="hero-overlay-top"></div>
+  <div class="hero-overlay-bottom"></div>
+  <div class="hero-text">
+    <h1>Аренда строительной техники</h1>
+    <p>Надёжно. Быстро. Без посредников.</p>
+    <a href="{% url 'catalog' %}" class="btn btn-primary">Посмотреть каталог</a>
+  </div>
+</section>
+
+<!-- Статистика -->
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><div class="num">75</div><div class="label">единиц техники</div></div>
+    <div class="stat"><div class="num">15</div><div class="label">лет на рынке</div></div>
+    <div class="stat"><div class="num">10 000</div><div class="label">довольных клиентов</div></div>
+    <div class="stat"><div class="num">324</div><div class="label">заявки в месяц</div></div>
+    <div class="stat"><div class="num">1</div><div class="label">час на подачу техники</div></div>
+  </div>
+</section>
+
+<!-- Почему выбирают нас -->
+<section class="advantages">
+  <div class="container">
+    <h2 class="section-title">Почему выбирают нас</h2>
+    <ul class="adv-list-vertical">
+      <li><img src="{% static 'rental/img/icons/adv_icon.svg' %}" alt=""> Оборудование 2021–2022 года выпуска</li>
+      <li><img src="{% static 'rental/img/icons/adv_icon.svg' %}" alt=""> Вся техника проходит регулярное ТО и обслуживается после каждого заказа</li>
+      <li><img src="{% static 'rental/img/icons/adv_icon.svg' %}" alt=""> Удалённое оформление договора и необходимой документации</li>
+      <li><img src="{% static 'rental/img/icons/adv_icon.svg' %}" alt=""> География аренды наших объектов — вся Россия</li>
+      <li><img src="{% static 'rental/img/icons/adv_icon.svg' %}" alt=""> Консультант подберёт технику и рассчитает доставку под вашу задачу</li>
+      <li><img src="{% static 'rental/img/icons/adv_icon.svg' %}" alt=""> Инженеры, специализирующиеся на технике Wacker Neuson с опытом от 7 лет</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Форма заявки -->
+<section class="request-block">
+  <div class="request-inner">
+    <h2 class="section-title">Не нашли того, что хотели?</h2>
+    <p class="form-intro">Оставьте заявку, и мы подберём то, что вам нужно</p>
+    <form method="post" class="form-inline">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Введите имя" required>
+      <input type="email" name="email" placeholder="mail@mail.ru" required>
+      <input type="tel" name="phone" placeholder="xxx-xxx-xxx" required>
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+    <p class="form-note">
+      Нажимая на кнопку, Вы принимаете Положение и Согласие на обработку персональных данных.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

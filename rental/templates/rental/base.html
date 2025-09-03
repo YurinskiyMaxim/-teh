@@ -1,0 +1,84 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}СТАР — Аренда строительной техники{% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'rental/css/style.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="{% block body_class %}{% endblock %}">
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="footer-logo">
+          <a href="{% url 'home' %}" class="logo">
+            <img
+              src="{% static 'rental/img/icons/logo.svg' %}"
+              alt="СТАР"
+              class="logo-icon"
+            />
+            <span class="logo-text">СТАР</span>
+          </a>
+        </div>
+        <div class="header-right">
+          <div class="social-icons">
+            <a href="#"
+              ><img
+                src="{% static 'rental/img/icons/Telegramm.svg' %}"
+                alt="Telegram"
+            /></a>
+            <a href="#"
+              ><img src="{% static 'rental/img/icons/VK.svg' %}" alt="VK"
+            /></a>
+            <a href="#"
+              ><img
+                src="{% static 'rental/img/icons/WhatsApp.svg' %}"
+                alt="WhatsApp"
+            /></a>
+          </div>
+          <nav class="header-links">
+            <a href="{% url 'about' %}">О нас</a>
+            <a href="{% url 'contacts' %}">Оставить заявку</a>
+            <a class="tel" href="tel:+79998887766">+7 999 888 77 66</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer class="bottom-bar">
+      <div class="container bottom-inner">
+        <div class="bottom-left">
+          <div class="footer-logo">
+            <img
+              src="{% static 'rental/img/icons/logo.svg' %}"
+              alt="СТАР"
+              class="logo-icon"
+            />
+            <span class="logo-text">СТАР</span>
+          </div>
+          <div class="footer-address">
+            ООО «СтартехникаРешард», 123456, г. Москва, ул. Центральная 1, офис
+            1<br />
+            ИНН 1234567890 ОГРН 123456789012
+          </div>
+        </div>
+        <div class="bottom-right">
+          <a href="#" class="footer-link">Политика конфиденциальности</a>
+          <span class="footer-phone">+7 999 888 77 66</span>
+          <span class="footer-email">info@starmedia.ru</span>
+          <div class="footer-note">Звонок по России бесплатный</div>
+        </div>
+      </div>
+    </footer>
+    <script src="{% static 'rental/js/card-titles.js' %}"></script>
+  </body>
+</html>

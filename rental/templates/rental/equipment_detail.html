@@ -1,0 +1,83 @@
+{% extends 'rental/base.html' %}
+{% load static %}
+
+{% block title %}{{ item.name }} — СТАР{% endblock %}
+
+{% block content %}
+<section class="detail">
+  <div class="container detail-container">
+
+    <!-- Верхняя часть: фото + описание -->
+    <div class="detail-grid">
+      <!-- Фото -->
+      <div class="detail-photo">
+        {% if item.image %}
+          <img src="{{ item.image.url }}" alt="{{ item.name }}">
+        {% else %}
+          <img src="{% static 'rental/img/placeholder.jpg' %}" alt="{{ item.name }}">
+        {% endif %}
+      </div>
+
+      <!-- Информация -->
+      <div class="detail-info">
+        <h1 class="section-title">{{ item.name }}</h1>
+        {% if item.description %}
+          <div class="detail-desc">{{ item.description|linebreaks }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Блок технических характеристик -->
+    {% if item.max_load or item.boom_length or item.max_height or item.axles or item.wheel_formula or item.dimensions or item.extra_specs %}
+      <div class="detail-specs">
+        <div class="specs-panel">
+          <h3 class="detail-subtitle">Технические характеристики — {{ item.name }}</h3>
+          <ul class="specs">
+            {% if item.max_load %}
+              <li>
+                <span class="spec-label">Максимальная грузоподъёмность</span>
+                <span class="spec-value">{{ item.max_load }}</span>
+              </li>
+            {% endif %}
+            {% if item.boom_length %}
+              <li>
+                <span class="spec-label">Максимальная длина стрелы</span>
+                <span class="spec-value">{{ item.boom_length }}</span>
+              </li>
+            {% endif %}
+            {% if item.max_height %}
+              <li>
+                <span class="spec-label">Максимальная высота подъёма</span>
+                <span class="spec-value">{{ item.max_height }}</span>
+              </li>
+            {% endif %}
+            {% if item.axles %}
+              <li>
+                <span class="spec-label">Количество осей</span>
+                <span class="spec-value">{{ item.axles }}</span>
+              </li>
+            {% endif %}
+            {% if item.wheel_formula %}
+              <li>
+                <span class="spec-label">Колёсная формула</span>
+                <span class="spec-value">{{ item.wheel_formula }}</span>
+              </li>
+            {% endif %}
+            {% if item.dimensions %}
+              <li>
+                <span class="spec-label">Габариты</span>
+                <span class="spec-value">{{ item.dimensions }}</span>
+              </li>
+            {% endif %}
+          </ul>
+
+          {% if item.extra_specs %}
+            <div class="specs-extra">{{ item.extra_specs|linebreaks }}</div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endblock %}

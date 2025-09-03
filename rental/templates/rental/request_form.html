@@ -1,0 +1,23 @@
+{% extends 'rental/base.html' %}
+{% load static %}
+{% block title %}Оставить заявку — СТАР{% endblock %}
+{% block body_class %}request-page{% endblock %}
+{% block content %}
+<section class="request-block">
+  <div class="request-inner">
+    <h2 class="section-title">Не нашли того, что хотели?</h2>
+    <p class="form-intro">Оставьте заявку, и мы подберём то, что вам нужно</p>
+    <form method="post" class="form-inline">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Введите имя" required>
+      <input type="email" name="email" placeholder="mail@mail.ru" required>
+      <input type="tel" name="phone" placeholder="xxx-xxx-xxx" required>
+      <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+    <p class="form-note">
+      Нажимая на кнопку, Вы принимаете Положение и Согласие на обработку персональных данных.
+    </p>
+  </div>
+</section>
+
+{% endblock %}

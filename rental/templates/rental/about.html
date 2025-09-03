@@ -1,0 +1,57 @@
+{% extends 'rental/base.html' %} {% load static %} {% block title %}О компании —
+СТАР{% endblock %} {% block content %}
+<section class="about">
+  <div class="container narrow">
+    <h1 class="section-title">О компании</h1>
+    <div class="split-img">
+      <img src="{% static 'rental/img/scissor-lifts.jpg' %}" alt="Подъёмники" />
+    </div>
+    <p>
+      АО «Контроль Аренда» — ведущий поставщик на российском рынке аренды
+      строительной техники. Большой опыт, широкий парк, строгие стандарты
+      качества и безопасности. Доставка по всей России, партнёрства с
+      крупнейшими строительными компаниями.
+    </p>
+  </div>
+</section>
+
+<section class="about-split">
+  <div class="container split">
+    <div class="split-text">
+      <h2 class="section-title">Аренда подъемников</h2>
+      <p>
+        Ножничные, коленчатые и мачтовые подъемники. Бренды: Haulotte, JLG,
+        Genie. Техника надёжна, безопасна и подходит для работы на различных
+        высотах.
+      </p>
+    </div>
+    <div class="split-img">
+      <img src="{% static 'rental/img/crane.jpg' %}" alt="Подъёмники" />
+    </div>
+  </div>
+</section>
+
+<section class="about-split reverse">
+  <div class="container split">
+    <div class="split-img">
+      <img src="{% static 'rental/img/podyomnic.jpg' %}" alt="Краны" />
+    </div>
+    <div class="split-text">
+      <h2 class="section-title">Аренда кранов</h2>
+      <p>
+        Автокраны и мобильные краны для любых задач. Бренды: Liebherr, Kato.
+        Манёвренность, высокая грузоподъёмность и возможность работы в
+        стеснённых условиях.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="container">
+    <h2>Нужна техника прямо сейчас?</h2>
+    <p>Оставьте заявку, и мы подберём оптимальное решение под ваши задачи.</p>
+    <a href="{% url 'contacts' %}" class="btn btn-primary">Оставить заявку</a>
+  </div>
+</section>
+{% endblock %}
